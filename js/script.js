@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const taskText = taskInput.value.trim();
         const taskDate = dateInput.value;
 
-        // Validasi input
-        if (taskText === '') {
+        // Validasi input yang diperbarui: Memeriksa teks tugas DAN tanggal
+        if (taskText === '' || taskDate === '') {
             // ---- DEBUGGING: Pesan jika validasi gagal ----
-            console.warn("Peringatan: Input tugas kosong. Penambahan dibatalkan.");
-            alert('Tugas tidak boleh kosong!');
+            console.warn("Peringatan: Input tugas atau tanggal kosong. Penambahan dibatalkan.");
+            alert('Tugas dan tanggal tidak boleh kosong!');
             return;
         }
 
