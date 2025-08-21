@@ -1,0 +1,196 @@
+:root {
+    --bg-color: #0303083d;
+    --card-bg: #2a2a44;
+    --text-color: #e0e0e0;
+    --input-bg: #323250;
+    --input-border: #444464;
+    --button-bg: #6a5acd;
+    --button-hover-bg: #5a4ac9;
+    --delete-button-bg: #ff0000;
+    --delete-button-hover-bg: #e55337;
+    --filter-button-bg: #525272;
+    --filter-button-hover-bg: #424262;
+    --completed-status-color: #4cd964;
+    --in-progress-status-color: #f7a01d;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+#task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+#task-input, #date-input {
+    flex-grow: 1;
+    padding: 12px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    color: var(--text-color);
+    outline: none;
+}
+
+#task-input::placeholder {
+    color: #999;
+}
+
+#add-button {
+    width: 50px;
+    height: 50px;
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#add-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.controls-container button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#filter-button {
+    background-color: var(--filter-button-bg);
+    color: var(--text-color);
+}
+
+#filter-button:hover {
+    background-color: var(--filter-button-hover-bg);
+}
+
+#delete-all-button {
+    background-color: var(--delete-button-bg);
+    color: white;
+}
+
+#delete-all-button:hover {
+    background-color: var(--delete-button-hover-bg);
+}
+
+.task-list-container {
+    background-color: var(--input-bg);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr 1fr 1fr;
+    gap: 10px;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--input-border);
+}
+
+#no-task-message {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+}
+
+#task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#task-list li {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--input-border);
+}
+
+#task-list li:last-child {
+    border-bottom: none;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.status-badge.completed {
+    background-color: var(--completed-status-color);
+    color: black;
+}
+
+.status-badge.in-progress {
+    background-color: var(--in-progress-status-color);
+    color: black;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.action-buttons button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.action-buttons button:hover {
+    opacity: 0.7;
+}
